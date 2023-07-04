@@ -19,7 +19,7 @@ string rawAge = String.Empty;
 int age = -1;
 bool firstReadingAge = true;
 
-while ( !int.TryParse(rawAge, out age) || age < 0)
+while ( !int.TryParse( rawAge, out age ) || age < 0 )
 {
     if ( !firstReadingAge )
         Console.WriteLine( "Ошибка при чтении возраста! Введите положительное число." );
@@ -38,7 +38,12 @@ string github = Console.ReadLine();
 
 Console.Clear();
 
-Console.WriteLine( $"Информация о пользователе {lastName} {firstName[ 0 ]}.{middleName[ 0 ]}." );
+string username = String.Empty;
+if ( lastName != String.Empty ) username += lastName;
+if ( firstName != String.Empty ) username += $" {firstName[ 0 ]}.";
+if ( middleName != String.Empty ) username += $" {middleName[ 0 ]}.";
+
+Console.WriteLine( $"Информация о пользователе {username}" );
 
 Console.WriteLine( "Личная информация:" );
 Console.WriteLine( $"\tИмя: {firstName}" );
