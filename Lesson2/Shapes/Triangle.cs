@@ -59,6 +59,6 @@ public class Triangle : IShape
     private void ValidateSide( double side )
     {
         if ( side < 0 )
-            throw new ArgumentException( "Side can't be negative" );
+            throw new ArgumentOutOfRangeException( "Side can't be negative" );
     }
 }

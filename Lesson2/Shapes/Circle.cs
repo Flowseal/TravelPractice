@@ -9,7 +9,7 @@ public class Circle : IShape
         set
         {
             if ( value < 0 )
-                throw new ArgumentException( "Radius can't be negative" );
+                throw new ArgumentOutOfRangeException( "Radius can't be negative" );
 
             _radius = value;
         }

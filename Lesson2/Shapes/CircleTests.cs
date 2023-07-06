@@ -5,28 +5,34 @@ namespace Shapes.Tests;
 public class CircleTests
 {
     [Test]
+    public void Circle_Constructor_NegativeRadius_ThrowException()
+    {
+        Assert.That( () => new Circle( -1 ), Throws.TypeOf<ArgumentOutOfRangeException>() );
+    }
+
+    [Test]
     public void Circle_CalculateArea_Radius3_CorrectAnswer()
     {
-        //Arrange
+        // Arrange
         Circle circle = new( 3 );
 
-        //Act
+        // Act
         double area = circle.CalculateArea();
 
-        //Assert
-        Assert.AreEqual( 28.2743, area, 0.0001 );
+        // Assert
+        Assert.That( area, Is.EqualTo( 28.2743 ).Within( 0.0001 ) );
     }
 
     [Test]
     public void Circle_CalculatePerimeter_Radius3_CorrectAnswer()
     {
-        //Arrange
+        // Arrange
         Circle circle = new( 3 );
 
-        //Act
+        // Act
         double perimeter = circle.CalculatePerimeter();
 
-        //Assert 
-        Assert.AreEqual( 18.8495, perimeter, 0.0001 );
+        // Assert 
+        Assert.That( perimeter, Is.EqualTo( 18.8495 ).Within( 0.0001 ) );
     }
 }

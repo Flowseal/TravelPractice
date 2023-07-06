@@ -9,7 +9,7 @@ public class Square : IShape
         set
         {
             if ( value < 0 )
-                throw new ArgumentException( "Size can't be negative" );
+                throw new ArgumentOutOfRangeException( "Size can't be negative" );
 
             _size = value;
         }
