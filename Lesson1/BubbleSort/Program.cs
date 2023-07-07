@@ -1,17 +1,21 @@
-﻿void BubbleSort<T>( List<T> list ) where T : IComparable<T>
+﻿List<T> BubbleSort<T>( List<T> list ) where T : IComparable<T>
 {
-    for ( int i = 0; i < list.Count - 1; i++ )
+    List<T> sortedList = new( list );
+
+    for ( int i = 0; i < sortedList.Count - 1; i++ )
     {
-        for ( int j = 0; j < list.Count - i - 1; j++ )
+        for ( int j = 0; j < sortedList.Count - i - 1; j++ )
         {
-            if ( list[ j ].CompareTo( list[ j + 1 ] ) > 0 )
+            if ( sortedList[ j ].CompareTo( sortedList[ j + 1 ] ) > 0 )
             {
-                T tempElement = list[ j ];
-                list[ j ] = list[ j + 1 ];
-                list[ j + 1 ] = tempElement;
+                T tempElement = sortedList[ j ];
+                sortedList[ j ] = sortedList[ j + 1 ];
+                sortedList[ j + 1 ] = tempElement;
             }
         }
     }
+
+    return sortedList;
 }
 
 List<int> listOfIntegers = new()
@@ -24,9 +28,9 @@ List<int> listOfIntegers = new()
     7
 };
 
-BubbleSort( listOfIntegers );
+List<int> sortedListOfIntegers = BubbleSort( listOfIntegers );
 Console.WriteLine( "Sorted list of integers:" );
-listOfIntegers.ForEach( num => Console.WriteLine( num ) );
+Console.WriteLine( string.Join( " ", sortedListOfIntegers ) );
 
 List<char> listOfChars = new()
 {
@@ -38,6 +42,6 @@ List<char> listOfChars = new()
     'e'
 };
 
-BubbleSort( listOfChars );
-Console.WriteLine( "\nSorted list of chars:" );
-listOfChars.ForEach( ch => Console.WriteLine( ch ) );
+List<char> sortedListOfChars = BubbleSort( listOfChars );
+Console.WriteLine( "Sorted list of chars:" );
+Console.WriteLine( string.Join( " ", sortedListOfChars ) );
