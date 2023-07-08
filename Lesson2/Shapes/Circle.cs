@@ -6,7 +6,7 @@ public class Circle : IShape
     public double Radius
     {
         get => _radius;
-        set
+        private set
         {
             if ( value < 0 )
                 throw new ArgumentOutOfRangeException( "Radius can't be negative" );

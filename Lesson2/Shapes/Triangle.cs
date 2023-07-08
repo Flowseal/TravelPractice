@@ -6,7 +6,7 @@ public class Triangle : IShape
     public double Side1
     {
         get => _side1;
-        set
+        private set
         {
             ValidateSide( value );
             _side1 = value;
@@ -15,7 +15,7 @@ public class Triangle : IShape
     public double Side2
     {
         get => _side2;
-        set
+        private set
         {
             ValidateSide( value );
             _side2 = value;
@@ -24,7 +24,7 @@ public class Triangle : IShape
     public double Side3
     {
         get => _side3;
-        set
+        private set
         {
             ValidateSide( value );
             _side3 = value;

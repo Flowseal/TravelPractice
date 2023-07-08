@@ -6,7 +6,7 @@ public class Square : IShape
     public double Size
     {
         get => _size;
-        set
+        private set
         {
             if ( value < 0 )
                 throw new ArgumentOutOfRangeException( "Size can't be negative" );
