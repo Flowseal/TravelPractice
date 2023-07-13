@@ -4,6 +4,7 @@
 База состоит из 3 таблиц: курьер (Courier), клиент (Client), доставка (Delivery). Таблицы связаны с помощью Id клиента и курьера, которые являются внешними ключами (FK) в таблице Delivery. Как и одному курьеру, так и одному клиенту может соответствовать множество доставок.
 
 ## ER диаграмма
+![ER-Diagram](https://github.com/Flowseal/TravelPractice/blob/hometasks/Lesson3_4/ReadmeImages/bd.png?raw=true)
 
 ## Queries
 ### Create
