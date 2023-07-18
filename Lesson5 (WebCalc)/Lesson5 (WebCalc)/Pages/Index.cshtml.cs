@@ -17,19 +17,12 @@ namespace Lesson5__WebCalc_.Pages
 
 		public IActionResult OnPost()
 		{
-			if ( new List<string>() { "+", "-" }.Contains( Calculator!.Operation ) )
+			return RedirectToPage( "Result", new Calculator
 			{
-				return RedirectToPage( "Result", new Calculator { 
-					FirstNumber = Calculator.FirstNumber, 
-					Operation = Calculator.Operation, 
-					SecondNumber = Calculator.SecondNumber } 
-				);
-			}
-			else
-			{
-				Message = "Invalid operation";
-				return RedirectToPage( "Index", new { Message } );
-			}	
+				FirstNumber = Calculator.FirstNumber,
+				Operation = Calculator.Operation,
+				SecondNumber = Calculator.SecondNumber
+			});
 		}
 	}
 }
