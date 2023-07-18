@@ -1,0 +1,46 @@
+﻿@page
+@model ResultModel
+@{
+	ViewData[ "Title" ] = "Result";
+}
+
+
+<h1 class="display-4">Result</h1>
+<div class="result-render">
+	<div class="d-md-inline-block numbers-line">
+		@foreach ( string hint in Model.hintLine.Reverse() )
+		{
+			<span class="digit-hint">@hint</span>
+		}
+	</div>
+
+	<div class="operation-container">
+		<span class="operation-sign">@Model.operation</span>
+	</div>
+
+	<div class="d-md-inline-block numbers-line">
+		@foreach ( char digit in Model.firstLine.Reverse() )
+		{
+			<span class="digit">@digit</span>
+		}
+	</div>
+
+	<div class="d-md-inline-block numbers-line">
+		@foreach ( char digit in Model.secondLine.Reverse() )
+		{
+			<span class="digit">@digit</span>
+		}
+	</div>
+
+	<hr class="result-line" />
+
+	<div class="d-md-inline-block numbers-line">
+		@foreach ( char digit in Model.result.Reverse() )
+		{
+			<span class="digit">@digit</span>
+		}
+	</div>
+
+	<a href="/" class="btn btn-primary" role="button" aria-pressed="true">Home</a>
+</div>
+

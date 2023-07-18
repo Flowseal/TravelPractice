@@ -1,0 +1,80 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+:root {
+    --digit-size: 50px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.result-render {
+    display: flex;
+    flex-direction: column;
+}
+
+.numbers-line {
+    flex: 1;
+    text-align: right;
+}
+
+.digit {
+    float: right;
+    font-size: var(--digit-size);
+    font-weight: bold;
+    font-family: cursive;
+}
+
+.digit-hint {
+    width: calc(var(--digit-size) / 1.6367);
+    height: calc(var(--digit-size) / 3);
+    font-size: calc(var(--digit-size) / 3);
+    font-family: cursive;
+    text-align: center;
+    float: right;
+}
+
+.operation-container {
+    position: relative;
+}
+
+.operation-sign {
+    position: absolute;
+    top: var(--digit-size);
+    left: calc(var(--digit-size) / 2 * (-1));
+    font-size: calc(var(--digit-size) / 1.5);
+    font-weight: bold;
+}
+
+.result-line {
+    clear: both;
+    border-top: 3px solid #222;
+    opacity: 1;
+    margin: 2px 0;
+}
