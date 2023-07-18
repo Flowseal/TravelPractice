@@ -17,12 +17,20 @@ namespace Lesson5__WebCalc_.Pages
 
 		public IActionResult OnPost()
 		{
-			return RedirectToPage( "Result", new Calculator
+			if ( Calculator!.FirstNumber != null && Calculator!.SecondNumber != null )
 			{
-				FirstNumber = Calculator.FirstNumber,
-				Operation = Calculator.Operation,
-				SecondNumber = Calculator.SecondNumber
-			});
+				return RedirectToPage( "Result", new Calculator
+				{
+					FirstNumber = Calculator.FirstNumber,
+					Operation = Calculator.Operation,
+					SecondNumber = Calculator.SecondNumber
+				} );
+			}
+			else
+			{
+				Message = "Invalid numbers";
+				return RedirectToPage( "Index", new { Message } );
+			}
 		}
 	}
 }

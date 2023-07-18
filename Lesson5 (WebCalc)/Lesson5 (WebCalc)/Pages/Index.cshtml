@@ -13,7 +13,7 @@
 	<div class="form-inputs">
 		<div class="form-group">
 			<label for="firstNumber" asp-for="Calculator!.FirstNumber">First Number</label>
-			<input type="number" class="form-control" id="firstNumber" aria-describedby="firstNumber" placeholder="Enter first value" asp-for="Calculator!.FirstNumber" />
+			<input type="number" class="form-control" min="0" id="firstNumber" aria-describedby="firstNumber" placeholder="Enter first value" asp-for="Calculator!.FirstNumber" />
 		</div>
 
 		<div class="form-group">
@@ -26,7 +26,7 @@
 
 		<div class="form-group">
 			<label for="secondNumber" asp-for="Calculator!.SecondNumber">Second Number</label>
-			<input type="number" class="form-control" id="secondNumber" aria-describedby="secondNumber" placeholder="Enter second value" asp-for="Calculator!.SecondNumber" />
+			<input type="number" class="form-control" min="0" id="secondNumber" aria-describedby="secondNumber" placeholder="Enter second value" asp-for="Calculator!.SecondNumber" />
 		</div>
 
 		<button type="submit" class="btn btn-primary">Calculate</button>
