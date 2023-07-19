@@ -10,5 +10,5 @@
 ### Addition operation
 ![Addition](https://github.com/Flowseal/TravelPractice/blob/hometasks/Lesson5%20(WebCalc)/Images/Addition.png?raw=true)
 
-### Subtraction operation
-![Subtraction](https://github.com/Flowseal/TravelPractice/blob/hometasks/Lesson5%20(WebCalc)/Images/Substraction.png?raw=true)
+### Substraction operation
+![Substraction](https://github.com/Flowseal/TravelPractice/blob/hometasks/Lesson5%20(WebCalc)/Images/Substraction.png?raw=true)
