@@ -69,6 +69,7 @@ body {
     top: var(--digit-size);
     left: calc(var(--digit-size) / 2 * (-1));
     font-size: calc(var(--digit-size) / 1.5);
+    line-height: calc(var(--digit-size) / 1.5);
     font-weight: bold;
 }
 

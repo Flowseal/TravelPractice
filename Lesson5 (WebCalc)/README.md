@@ -2,6 +2,7 @@
 ## Avaliable operators:
 * `-`
 * `+`
+* `*`
 
 ## Preview
 ### Index
@@ -12,3 +13,6 @@
 
 ### Substraction operation
 ![Substraction](https://github.com/Flowseal/TravelPractice/blob/hometasks/Lesson5%20(WebCalc)/Images/Substraction.png?raw=true)
+
+### Multiplication operation
+![Substraction](https://github.com/Flowseal/TravelPractice/blob/hometasks/Lesson5%20(WebCalc)/Images/Mult.png?raw=true)

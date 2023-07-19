@@ -6,7 +6,8 @@ namespace Lesson5__WebCalc_.Pages
 	public class ResultModel : PageModel
 	{
 		private Calculator Calculator { get; set; }
-		public String[] hintLine;
+		public List<string> multiplyStrings = new();
+		public String[]? hintLine;
 		public String firstLine = "";
 		public String secondLine = "";
 		public String result = "";
@@ -63,7 +64,10 @@ namespace Lesson5__WebCalc_.Pages
 			// Fill smaller length lines with zeroes for simplicity
 			for ( int i = 0; i < lines.Count; i++ )
 			{
-				lines[ i ] = lines[ i ].PadLeft( maxLineWidth, '0' );
+				if ( operation == "+" )
+					lines[ i ] = lines[ i ].PadLeft( maxLineWidth, '0' );
+				else
+					lines[ i ] = lines[ i ].PadLeft( maxLineWidth - i, '0' ).PadRight( maxLineWidth, '0' );
 			}
 
 			// Hints (in mind operations above first line)
@@ -185,6 +189,39 @@ namespace Lesson5__WebCalc_.Pages
 			}
 		}
 
+		public void Multiplication()
+		{
+			// Swap lines to make the longer number come first
+			if ( firstLine.Length < secondLine.Length )
+			{
+				(firstLine, secondLine) = (secondLine, firstLine);
+			}
+
+			// Prepare multiplied lines for adding
+			for ( int bot = 0; bot < secondLine.Length; bot++ )
+			{
+				int botDigit = secondLine[ secondLine.Length - bot - 1 ] - '0';
+				string line = "";
+				int remains = 0;
+
+				for ( int top = 0; top < firstLine.Length; top++ )
+				{
+					int topDigit = firstLine[ firstLine.Length - top - 1 ] - '0';
+					int multipliedResult = topDigit * botDigit + remains;
+					remains = ( top == firstLine.Length - 1 ) ? 0 : ( multipliedResult / 10 );
+					AppendResult( ref line, multipliedResult - remains * 10 );
+				}
+
+				multiplyStrings.Add( line );
+			}
+
+			// Calculate result
+			result = LinesAdding( multiplyStrings );
+
+			// We don't want to show hint line in this case
+			hintLine = Array.Empty<string>();
+		}
+
 		public void ProceedData()
 		{
 			firstLine = Calculator.FirstNumber;
@@ -198,6 +235,9 @@ namespace Lesson5__WebCalc_.Pages
 					break;
 				case "-":
 					Substraction();
+					break;
+				case "x":
+					Multiplication();
 					break;
 			}
 		}

@@ -7,12 +7,15 @@
 
 <h1 class="display-4">Result</h1>
 <div class="result-render">
-	<div class="d-md-inline-block numbers-line">
-		@foreach ( string hint in Model.hintLine.Reverse() )
-		{
-			<span class="digit-hint">@hint</span>
-		}
-	</div>
+	@if ( Model.hintLine.Length > 0 )
+	{
+		<div class="d-md-inline-block numbers-line">
+			@foreach ( string hint in Model.hintLine.Reverse() )
+			{
+				<span class="digit-hint">@hint</span>
+			}
+		</div>
+	}
 
 	<div class="operation-container">
 		<span class="operation-sign">@Model.operation</span>
@@ -33,6 +36,28 @@
 	</div>
 
 	<hr class="result-line" />
+
+	@if ( Model.operation == "x" )
+	{
+		@for ( int i = 0; i < Model.multiplyStrings.Count; i++ )
+		{
+			@if ( i != Model.multiplyStrings.Count - 1 )
+			{
+				<div class="operation-container">
+					<span class="operation-sign">+</span>
+				</div>
+			}
+
+			<div class="d-md-inline-block numbers-line" style="margin-right: calc(var(--digit-size) / 1.6367 * @i)">
+				@foreach ( char digit in Model.multiplyStrings[ i ] )
+				{
+					<span class="digit">@digit</span>
+				}
+			</div>
+		}
+
+		<hr class="result-line" />
+	}
 
 	<div class="d-md-inline-block numbers-line">
 		@foreach ( char digit in Model.result )
