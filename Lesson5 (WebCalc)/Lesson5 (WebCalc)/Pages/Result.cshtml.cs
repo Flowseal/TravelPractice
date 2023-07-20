@@ -1,5 +1,6 @@
 ﻿using Lesson5__WebCalc_.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Primitives;
 
 namespace Lesson5__WebCalc_.Pages
 {
@@ -106,6 +107,10 @@ namespace Lesson5__WebCalc_.Pages
 				AppendResult( ref linesSumResult, columnResult );
 			}
 
+			// Remove leading zeroes
+			if ( result.Length > 1 )
+				result = result.TrimEnd( '0' );
+
 			return linesSumResult;
 		}
 
@@ -175,10 +180,8 @@ namespace Lesson5__WebCalc_.Pages
 			}
 
 			// Remove leading zeroes
-			while ( result[ result.Length - 1 ] == '0' )
-			{
-				result = result.Remove( result.Length - 1 );
-			}
+			if ( result.Length > 1 )
+				result = result.TrimEnd( '0' );
 
 			// Swap operation signs after calculation in case of negative result swap
 			if ( swapLines )
@@ -227,6 +230,18 @@ namespace Lesson5__WebCalc_.Pages
 			firstLine = Calculator.FirstNumber;
 			secondLine = Calculator.SecondNumber;
 			operation = Calculator.Operation;
+
+			// Strip extra zeroes
+			if ( firstLine.Length == firstLine.Count( c => c == '0' ) )
+				firstLine = "0";
+			if ( secondLine.Length == secondLine.Count( c => c == '0' ) )
+				secondLine = "0";
+
+			// Remove leading zeroes
+			if ( firstLine.Length > 1 )
+				firstLine = firstLine.TrimStart( '0' );
+			if ( secondLine.Length > 1 )
+				secondLine = secondLine.TrimStart( '0' );
 
 			switch ( operation )
 			{
