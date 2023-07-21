@@ -1,7 +1,6 @@
 ﻿using DatabaseProvider;
 using DatabaseProvider.Repositories.Abstractions;
 using DatabaseProvider.Repositories.Implementations;
-using System.Data;
 
 namespace Delivery
 {
