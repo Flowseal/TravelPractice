@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <title>Swagger Killer</title>
+  </head>
+  <body>
+    <div class="api-container">
+      <div class="badge indigo selected" id="apiGetAll">
+        <p class="badge__name">Get All Users</p>
+        <div class="badge__info">
+          <p class="badge__type">GET</p>
+          <p class="badge__path">/api/users</p>
+        </div>
+      </div>
+
+      <div class="badge cyan" id="apiGetById">
+        <p class="badge__name">Get User By Id</p>
+        <div class="badge__info">
+          <p class="badge__type">GET</p>
+          <p class="badge__path">/api/users/{userId}</p>
+        </div>
+      </div>
+
+      <div class="badge ruby" id="apiCreateUser">
+        <p class="badge__name">Create User</p>
+        <div class="badge__info">
+          <p class="badge__type">POST</p>
+          <p class="badge__path">/api/users</p>
+        </div>
+      </div>
+
+      <div class="badge coral" id="apiUpdateUser">
+        <p class="badge__name">Update User</p>
+        <div class="badge__info">
+          <p class="badge__type">PUT</p>
+          <p class="badge__path">/api/users/{userId}</p>
+        </div>
+      </div>
+
+      <div class="badge daisy" id="apiDeleteUser">
+        <p class="badge__name">Delete User</p>
+        <div class="badge__info">
+          <p class="badge__type">DELETE</p>
+          <p class="badge__path">/api/users/{userId}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="data-container">
+      <div class="data-container__forms">
+        <pre class="forms__output hide" id="responseOutput">
+        </pre>
+
+        <div class="forms__field hide" id="formInputUserId">
+          <label class="text-field__label" for="inputUserId">userId</label>
+          <input class="text-field__input" type="text" name="inputUserId" id="inputUserId" placeholder="ID" value="">
+        </div>
+
+        <div class="forms__field hide" id="formInputJson">
+          <label class="text-field__label" for="inputJson">JSON</label>
+          <textarea class="text-field__input forms__textarea" id="inputJson" spellcheck="false" value=""></textarea>
+        </div>
+
+        <button type="button" class="forms__button" id="inputButton">Send</button>
+      </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

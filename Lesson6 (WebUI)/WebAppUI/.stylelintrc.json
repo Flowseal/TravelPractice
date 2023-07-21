@@ -1,0 +1,14 @@
+{
+  "extends": ["stylelint-config-recess-order"],
+  "reportNeedlessDisables": true,
+  "reportInvalidScopeDisables": true,
+  "defaultSeverity": "warning",
+  "rules": {
+    "at-rule-disallowed-list": [
+      ["import", "extend"],
+      {
+        "message": "It is not allowed to use 'import'/'extends'. See also https://sass-lang.com/documentation/at-rules/import"
+      }
+    ]
+  }
+}
