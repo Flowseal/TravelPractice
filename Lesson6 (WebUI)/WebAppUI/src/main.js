@@ -1,7 +1,7 @@
 import "./style.css";
 
-var currentActiveApiBadge = document.getElementById("apiGetAll");
-var previousActiveApiBadge = document.getElementById("apiGetAll");
+let currentActiveApiBadge = document.getElementById("apiGetAll");
+let previousActiveApiBadge = document.getElementById("apiGetAll");
 
 const badgeApiGetAll = document.getElementById("apiGetAll");
 const badgeApiGetById = document.getElementById("apiGetById");
@@ -16,11 +16,12 @@ const formInputJson = document.getElementById("formInputJson");
 const inputButton = document.getElementById("inputButton");
 
 const responseOutput = document.getElementById("responseOutput");
+const responseOutputBlock = document.getElementById("responseOutputBlock");
 
-badgeApiGetAll.addEventListener("click", async event => {
+badgeApiGetAll.addEventListener("click", event => {
   event.preventDefault();
 
-  if (currentActiveApiBadge == badgeApiGetAll) return;
+  if (currentActiveApiBadge === badgeApiGetAll) return;
 
   previousActiveApiBadge = currentActiveApiBadge;
   currentActiveApiBadge = badgeApiGetAll;
@@ -31,10 +32,10 @@ badgeApiGetAll.addEventListener("click", async event => {
   formInputJson.classList.add("hide");
 });
 
-badgeApiGetById.addEventListener("click", async event => {
+badgeApiGetById.addEventListener("click", event => {
   event.preventDefault();
 
-  if (currentActiveApiBadge == badgeApiGetById) return;
+  if (currentActiveApiBadge === badgeApiGetById) return;
 
   previousActiveApiBadge = currentActiveApiBadge;
   currentActiveApiBadge = badgeApiGetById;
@@ -46,10 +47,10 @@ badgeApiGetById.addEventListener("click", async event => {
   formInputJson.classList.add("hide");
 });
 
-badgeApiCreateUser.addEventListener("click", async event => {
+badgeApiCreateUser.addEventListener("click", event => {
   event.preventDefault();
 
-  if (currentActiveApiBadge == badgeApiCreateUser) return;
+  if (currentActiveApiBadge === badgeApiCreateUser) return;
 
   previousActiveApiBadge = currentActiveApiBadge;
   currentActiveApiBadge = badgeApiCreateUser;
@@ -72,10 +73,10 @@ badgeApiCreateUser.addEventListener("click", async event => {
   inputJson.style.height = "230px";
 });
 
-badgeApiUpdateUser.addEventListener("click", async event => {
+badgeApiUpdateUser.addEventListener("click", event => {
   event.preventDefault();
 
-  if (currentActiveApiBadge == badgeApiUpdateUser) return;
+  if (currentActiveApiBadge === badgeApiUpdateUser) return;
 
   previousActiveApiBadge = currentActiveApiBadge;
   currentActiveApiBadge = badgeApiUpdateUser;
@@ -93,10 +94,10 @@ badgeApiUpdateUser.addEventListener("click", async event => {
   inputJson.style.height = "90px";
 });
 
-badgeApiDeleteUser.addEventListener("click", async event => {
+badgeApiDeleteUser.addEventListener("click", event => {
   event.preventDefault();
 
-  if (currentActiveApiBadge == badgeApiDeleteUser) return;
+  if (currentActiveApiBadge === badgeApiDeleteUser) return;
 
   previousActiveApiBadge = currentActiveApiBadge;
   currentActiveApiBadge = badgeApiDeleteUser;
@@ -113,10 +114,10 @@ inputButton.addEventListener("click", async event => {
 
   const data = inputJson.value;
   const type = currentActiveApiBadge.getElementsByClassName("badge__type")[0].innerHTML;
-  var path = currentActiveApiBadge.getElementsByClassName("badge__path")[0].innerHTML;
+  let path = currentActiveApiBadge.getElementsByClassName("badge__path")[0].innerHTML;
   path = path.replace("{userId}", inputUserId.value);
 
-  var response = null;
+  let response = null;
 
   if (formInputJson.classList.contains("hide"))
   {
@@ -136,24 +137,24 @@ inputButton.addEventListener("click", async event => {
     });
   }
 
-  responseOutput.classList.remove("error");
-  responseOutput.classList.remove("success");
-  responseOutput.classList.remove("hide");
+  responseOutputBlock.classList.remove("error");
+  responseOutputBlock.classList.remove("success");
+  responseOutputBlock.classList.remove("hide");
 
   const output = JSON.stringify(await response.json(), null, 2);
   responseOutput.textContent = output;
 
   if (response.ok)
   {
-    responseOutput.classList.add("success");
+    responseOutputBlock.classList.add("success");
   }
   else
   {
-    responseOutput.classList.add("error");
+    responseOutputBlock.classList.add("error");
   }
 });
 
-responseOutput.addEventListener("click", async event => {
+responseOutputBlock.addEventListener("click", event => {
   event.preventDefault();
-  responseOutput.classList.add("hide");
+  responseOutputBlock.classList.add("hide");
 });

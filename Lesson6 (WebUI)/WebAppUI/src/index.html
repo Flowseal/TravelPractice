@@ -13,7 +13,7 @@
   </head>
   <body>
     <div class="api-container">
-      <div class="badge indigo selected" id="apiGetAll">
+      <div class="badge color-indigo selected" id="apiGetAll">
         <p class="badge__name">Get All Users</p>
         <div class="badge__info">
           <p class="badge__type">GET</p>
@@ -21,7 +21,7 @@
         </div>
       </div>
 
-      <div class="badge cyan" id="apiGetById">
+      <div class="badge color-cyan" id="apiGetById">
         <p class="badge__name">Get User By Id</p>
         <div class="badge__info">
           <p class="badge__type">GET</p>
@@ -29,7 +29,7 @@
         </div>
       </div>
 
-      <div class="badge ruby" id="apiCreateUser">
+      <div class="badge color-ruby" id="apiCreateUser">
         <p class="badge__name">Create User</p>
         <div class="badge__info">
           <p class="badge__type">POST</p>
@@ -37,7 +37,7 @@
         </div>
       </div>
 
-      <div class="badge coral" id="apiUpdateUser">
+      <div class="badge color-coral" id="apiUpdateUser">
         <p class="badge__name">Update User</p>
         <div class="badge__info">
           <p class="badge__type">PUT</p>
@@ -45,7 +45,7 @@
         </div>
       </div>
 
-      <div class="badge daisy" id="apiDeleteUser">
+      <div class="badge color-daisy" id="apiDeleteUser">
         <p class="badge__name">Delete User</p>
         <div class="badge__info">
           <p class="badge__type">DELETE</p>
@@ -56,9 +56,11 @@
 
     <div class="data-container">
       <div class="data-container__forms">
-        <pre class="forms__output hide" id="responseOutput">
-        </pre>
-
+        <div class="forms__output hide" id="responseOutputBlock">
+          <pre class="forms__output-text" id="responseOutput">
+          </pre>
+        </div>
+        
         <div class="forms__field hide" id="formInputUserId">
           <label class="text-field__label" for="inputUserId">userId</label>
           <input class="text-field__input" type="text" name="inputUserId" id="inputUserId" placeholder="ID" value="">

@@ -49,22 +49,22 @@ body {
   opacity: 1.0;
 }
 
-.badge.indigo {
+.badge.color-indigo {
   background-color: #0D3D56;
 }
-.badge.cyan {
+.badge.color-cyan {
   background-color: #1496BB;
 }
-.badge.kelly {
+.badge.color-kelly {
   background-color: #A3B86C;
 }
-.badge.daisy {
+.badge.color-daisy {
   background-color: #D3B53D;
 }
-.badge.coral {
+.badge.color-coral {
   background-color: #DA621E;
 }
-.badge.ruby {
+.badge.color-ruby {
   background-color: #AD2A1A;
 }
 
@@ -113,17 +113,18 @@ body {
 .forms__output {
   display: flex;
   width: 100%;
-  padding: 25px 0 5px 0;
-  margin-bottom: 20px;
   color: #FFF;
   background-color: rgba(25, 25, 25, 0.85);
   cursor: pointer;
+  border-radius: 16px;
+}
+
+.forms__output-text {
+  padding-top: 15px;
 }
 
 .forms__output::after {
-  margin-left: auto;
-  margin-top: -20px;
-  margin-right: 10px;
+  margin: 10px 10px 0 auto;
   content: "Click me to close";
 }
 
@@ -159,7 +160,7 @@ body {
   background-color: #FFF;
   background-clip: padding-box;
   border: 1px solid #bdbdbd;
-  border-radius: 0.25rem;
+  border-radius: 8px;
   transition: border-color 0.15s ease-in-out;
 }
 
