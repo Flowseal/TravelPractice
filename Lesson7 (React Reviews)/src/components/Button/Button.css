@@ -1,0 +1,13 @@
+.button {
+    font-size: 14px;
+    width: 119px;
+    height: 32px;
+    border-radius: 5px;
+    border: 1px solid #DCDCDC;
+    box-sizing: border-box;
+    background-color: #1E65B7;
+    color: #FFF;
+    text-align: center;
+    margin-left: auto;
+    cursor: pointer;
+}

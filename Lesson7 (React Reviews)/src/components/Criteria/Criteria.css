@@ -1,0 +1,42 @@
+.criteria {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 21px;
+    margin-left: -9px;
+    font-size: 20px;
+}
+
+.criteria-slider {
+    opacity: 0;
+    width: 200px;
+    height: 6px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.criteria-points {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 202px;
+    height: 6px;
+    border-radius: 5px;
+    border: 1px solid #DCDCDC;
+}
+
+.criteria-point {
+    margin-top: -3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 15px;
+    background-color: #FFF;
+    border: 1px solid #DCDCDC;
+    transition: background-color 0.25s ease-in-out;
+}
+
+.criteria-point.active {
+    background-color: #1E64B7;
+}

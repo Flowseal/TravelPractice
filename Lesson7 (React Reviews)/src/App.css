@@ -1,0 +1,12 @@
+#root {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  
+  box-sizing: border-box;
+  padding-top: 3vh;
+}
