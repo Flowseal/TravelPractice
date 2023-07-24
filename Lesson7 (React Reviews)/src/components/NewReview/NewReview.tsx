@@ -1,6 +1,5 @@
 import "./NewReview.css"
 import Criteria from "../Criteria/Criteria";
-import Button from "../Button/Button";
 import { useState } from "react";
 
 type NewReviewProps = {
@@ -80,11 +79,13 @@ export default function NewReview({ criteriasNames, onNewReview }: NewReviewProp
                     placeholder="What could we improve?"
                     onChange={(e) => handleTextChange(e)}
                 />
-                <Button
+                <button 
                     name="reply-button"
-                    label="Send"
+                    className="button"
                     onClick={(e) => handleButtonClick(e)}
-                />
+                >
+                Send
+                </button>
             </div>
         </div>
     )
