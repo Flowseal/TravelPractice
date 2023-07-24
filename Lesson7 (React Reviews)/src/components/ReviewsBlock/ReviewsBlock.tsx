@@ -1,9 +1,9 @@
 import "./ReviewsBlock.css"
-import { ReviewProps } from "../Review/Review";
+import { ReviewData } from "../../ReviewData"
 import Review from "../Review/Review";
 
 type ReviewsBlockProps = {
-    reviews: ReviewProps[];
+    reviews: ReviewData[];
 };
 
 export default function ReviewsBlock({ reviews }: ReviewsBlockProps): JSX.Element {

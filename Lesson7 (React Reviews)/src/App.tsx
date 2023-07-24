@@ -1,11 +1,11 @@
 import { useState } from "react";
 import NewReview from "./components/NewReview/NewReview"; 
 import ReviewsBlock from "./components/ReviewsBlock/ReviewsBlock";
-import { ReviewProps } from "./components/Review/Review";
+import { ReviewData } from "./ReviewData";
 import "./App.css";
 
 function App() {
-  const [reviews, setReviews] = useState<ReviewProps[]>([]);
+  const [reviews, setReviews] = useState<ReviewData[]>([]);
 
   const defaultCriteriasNames: string[] = [
     "Cleanliness",
