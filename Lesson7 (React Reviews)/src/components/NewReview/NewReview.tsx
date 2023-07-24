@@ -1,6 +1,5 @@
 import "./NewReview.css"
 import Criteria from "../Criteria/Criteria";
-import TextArea from "../TextArea/TextArea";
 import Button from "../Button/Button";
 import { useState } from "react";
 
@@ -74,8 +73,9 @@ export default function NewReview({ criteriasNames, onNewReview }: NewReviewProp
                 </div>
             </div>
             <div className="new-review__form">
-                <TextArea
+                <textarea 
                     name="reply-textarea"
+                    className="textarea"
                     value={text}
                     placeholder="What could we improve?"
                     onChange={(e) => handleTextChange(e)}
