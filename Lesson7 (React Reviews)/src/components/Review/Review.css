@@ -23,7 +23,7 @@
 }
 
 .text-block__review {
-    width: 451px;
+    width: min(451px, 30vw);
     font-size: 14px;
     margin: 0;
 }
