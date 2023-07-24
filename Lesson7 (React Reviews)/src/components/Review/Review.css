@@ -26,6 +26,8 @@
     width: min(451px, 30vw);
     font-size: 14px;
     margin: 0;
+    word-break: break-all;
+    white-space: normal;
 }
 
 .review__rating {

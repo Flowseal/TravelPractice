@@ -9,7 +9,7 @@ type NewReviewProps = {
 };
 
 export default function NewReview({ criteriasNames, onNewReview }: NewReviewProps): JSX.Element {
-    let baseCriterias: { [name: string] : number; } = {}
+    const baseCriterias: { [name: string] : number; } = {}
     criteriasNames.forEach(criteria => {
         baseCriterias[criteria] = 1;
     });
