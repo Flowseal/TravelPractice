@@ -1,5 +1,5 @@
 import "./ReviewsBlock.css"
-import { ReviewData } from "../../ReviewData"
+import { Review as ReviewData } from "../../review"
 import Review from "../Review/Review";
 
 type ReviewsBlockProps = {

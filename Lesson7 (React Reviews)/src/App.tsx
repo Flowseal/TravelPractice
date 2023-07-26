@@ -1,7 +1,7 @@
 import { useState } from "react";
 import NewReview from "./components/NewReview/NewReview"; 
 import ReviewsBlock from "./components/ReviewsBlock/ReviewsBlock";
-import { ReviewData } from "./ReviewData";
+import { Review as ReviewData } from "./review";
 import "./App.css";
 
 function App() {
