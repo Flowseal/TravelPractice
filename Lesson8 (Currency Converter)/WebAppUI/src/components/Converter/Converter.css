@@ -1,0 +1,55 @@
+.converter-block {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: max(400px, 40vw);
+    background-color: rgb(30, 30, 30);
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.converter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.converter-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 2px dotted rgb(255, 99, 132, 0.5);
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    position: absolute;
+    width: max(400px, 28vw);
+    background-color: rgb(30, 30, 30);
+    color: rgb(212, 212, 212);
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .6s;
+}
+
+.tooltiptext {
+    top: 100%;
+    left: 50%;  
+    margin-left: calc(max(400px, 28vw) / -2);
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
