@@ -1,6 +1,6 @@
 import "./NewReview.css"
 import Criteria from "../Criteria/Criteria";
-import { useState } from "react";
+import { CSSProperties, useState } from "react";
 
 type NewReviewProps = {
     criteriasNames: string[];
@@ -8,6 +8,11 @@ type NewReviewProps = {
 };
 
 export default function NewReview({ criteriasNames, onNewReview }: NewReviewProps): JSX.Element {
+    const [textAreaHeight, setTextAreaHeight] = useState<number | null>(null);
+    const textAreaStyles: CSSProperties = {
+        "height": textAreaHeight ? textAreaHeight + 'px' : 'auto'
+    };
+
     const baseCriterias: { [name: string] : number; } = {}
     criteriasNames.forEach(criteria => {
         baseCriterias[criteria] = 1;
@@ -28,8 +33,7 @@ export default function NewReview({ criteriasNames, onNewReview }: NewReviewProp
 
     const handleTextChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         setText(event.target.value);
-        event.target.style.height = "auto";
-        event.target.style.height = event.target.scrollHeight + 'px';
+        setTextAreaHeight(event.target.scrollHeight);
     };
 
     const clearForm = () => {
@@ -75,6 +79,7 @@ export default function NewReview({ criteriasNames, onNewReview }: NewReviewProp
                 <textarea 
                     name="reply-textarea"
                     className="textarea"
+                    style={textAreaStyles}
                     value={text}
                     placeholder="What could we improve?"
                     onChange={(e) => handleTextChange(e)}
