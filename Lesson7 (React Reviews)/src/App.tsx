@@ -31,7 +31,7 @@ function App() {
     <>
       <NewReview 
         criteriasNames={defaultCriteriasNames}
-        onNewReview={(rating, text) => handleNewReview(rating, text)}
+        onNewReview={handleNewReview}
       />
 
       <ReviewsBlock

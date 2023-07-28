@@ -82,12 +82,12 @@ export default function NewReview({ criteriasNames, onNewReview }: NewReviewProp
                     style={textAreaStyles}
                     value={text}
                     placeholder="What could we improve?"
-                    onChange={(e) => handleTextChange(e)}
+                    onChange={handleTextChange}
                 />
                 <button 
                     name="reply-button"
                     className="button"
-                    onClick={(e) => handleButtonClick(e)}
+                    onClick={handleButtonClick}
                 >
                 Send
                 </button>
