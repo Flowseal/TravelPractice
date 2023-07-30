@@ -64,7 +64,7 @@ function App() {
 
   return (
     <>
-      {currencies.length && currencyPrices[currencyPair] !== undefined && (
+      {currencies.length > 0 && currencyPrices[currencyPair] !== undefined && (
       <div className="converters">
         <Converter 
           currencies={currencies}
