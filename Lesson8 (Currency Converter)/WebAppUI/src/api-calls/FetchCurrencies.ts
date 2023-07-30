@@ -5,5 +5,5 @@ export default function fetchCurrencies(): Promise<Currency[]> {
       .then((res) => res.json())
       .then((data) => {
         return data;
-      }) as Promise<Currency[]>;
+      });
 };
