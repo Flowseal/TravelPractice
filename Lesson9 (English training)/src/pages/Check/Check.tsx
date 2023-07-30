@@ -23,7 +23,7 @@ export default function Check() {
     const setUnusedWords = useWordsCheckStore(state => state.setUnusedWords);
     const goToNextWord = useWordsCheckStore(state => state.goToNextWord);
     
-    const [selectedTranslation, setSelectedTranslation] = useState<string>(""); 
+    const [selectedTranslation, setSelectedTranslation] = useState<string>("Не выбрано"); 
     const handleSelectedTranslationChange = (event: SelectChangeEvent) => {
         setSelectedTranslation(event.target.value as string);
     };
@@ -36,16 +36,14 @@ export default function Check() {
 
     // On next word
     useEffect(() => {
-        if (selectWords.length > 0)
-        {
-            setSelectedTranslation(selectWords[0]);
-        }
-        else if (currentWord !== null && selectedTranslation !== "")
+        if (selectWords.length === 0 && currentWord !== null && selectedTranslation !== "Не выбрано")
         {
             // currentWord чтобы проверить инициализацию всех элементов (т.е. 1-ое тестирование)
             // selectedTranslation чтобы проверить ресет всех элементов (т.е. повтороное тестирование)
             navigate("/result");
         }
+
+        setSelectedTranslation("Не выбрано");
     }, [selectWords]);
     
     const handleCheckButtonClick = () => {
@@ -93,7 +91,7 @@ export default function Check() {
             </div>
 
             <Stack alignItems={"flex-start"}>
-                <Button variant="contained" sx={{width: `auto`, fontWeight: `700`}} onClick={handleCheckButtonClick}>
+                <Button variant="contained" sx={{width: `auto`, fontWeight: `700`}} disabled={selectedTranslation === "Не выбрано"} onClick={handleCheckButtonClick}>
                     Проверить
                 </Button>
             </Stack>

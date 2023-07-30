@@ -11,6 +11,9 @@ export default function NewWord() {
     const newWord = useDictionaryStore(state => state.newWord);
     const [russianWord, setRussianWord] = useState<string>("");
     const [englishWord, setEnglishWord] = useState<string>("");
+    
+    const russianWordError = russianWord.length === 0;
+    const englishWordError = englishWord.length === 0;
 
     const handleTextfieldChange = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>, setter: (value: string) => void) => {
         setter(event.target.value);
@@ -37,16 +40,16 @@ export default function NewWord() {
                 <div className="box-container bot">
                     <Stack direction="row" sx={{width: `480px`}} justifyContent={"space-between"} alignItems={"center"}>
                         <span>Слово на русском языке</span>
-                        <TextField id="russian-word" variant="outlined" size="small" value={russianWord} onChange={(e) => handleTextfieldChange(e, setRussianWord)}/>
+                        <TextField id="russian-word" variant="outlined" size="small" error={russianWordError} value={russianWord} onChange={(e) => handleTextfieldChange(e, setRussianWord)}/>
                     </Stack>
                     <Stack direction="row" sx={{width: `480px`}} justifyContent={"space-between"} alignItems={"center"}>
                         <span>Перевод на английский язык</span>
-                        <TextField id="english-word" variant="outlined" size="small" value={englishWord} onChange={(e) => handleTextfieldChange(e, setEnglishWord)}/>
+                        <TextField id="english-word" variant="outlined" size="small" error={englishWordError} value={englishWord} onChange={(e) => handleTextfieldChange(e, setEnglishWord)}/>
                     </Stack>
                 </div>       
 
                 <Stack direction="row" spacing={1} alignItems={"flex-start"}>
-                    <Button variant="contained" onClick={handleSaveWord} sx={{fontWeight: `700`}}>
+                    <Button variant="contained" disabled={russianWordError || englishWordError} onClick={handleSaveWord} sx={{fontWeight: `700`}}>
                         Сохранить
                     </Button>
                     <Button variant="outlined" onClick={() => navigate("/dictionary")} sx={{fontWeight: `700`}}>
