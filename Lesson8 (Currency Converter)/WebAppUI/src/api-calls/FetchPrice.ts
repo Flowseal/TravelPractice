@@ -4,7 +4,12 @@ export default function fetchPrice(payment: string, purchased: string, minutesDi
     const fromDateTime = new Date();
     fromDateTime.setMinutes(fromDateTime.getMinutes() - minutesDifference );
 
-    return fetch(`https://localhost:7120/prices?PaymentCurrency=${payment}&PurchasedCurrency=${purchased}&FromDateTime=${fromDateTime.toISOString()}`)
+    return fetch(`https://localhost:7120/prices?${new URLSearchParams({
+      // API expects DateTimes in UTC timezone
+      FromDateTime: fromDateTime.toISOString(),
+      PaymentCurrency: payment,
+      PurchasedCurrency: purchased,
+    })}`)
       .then((res) => res.json())
       .then((data) => {
         const currencyPairPrices: CurrencyPrice[] = [];
