@@ -69,7 +69,7 @@ export default function Graph({currencyPair, pricesHistory}: GraphProps) {
         datasets: [
         {
             label: currencyPair,
-            data: graphLabels.map((label, index) => pricesHistory[pricesHistory.length - 1 - index].price),
+            data: graphLabels.map((label, index) => pricesHistory[pricesHistory.length - 1 - index].price).reverse(),
             borderColor: "rgb(255, 99, 132)",
             backgroundColor: "rgba(255, 99, 132, 0.5)"
         }
