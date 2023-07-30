@@ -1,0 +1,38 @@
+.result-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 292px;
+    box-sizing: border-box;
+    padding: 16px 16px 23px 16px;
+    background-color: #FFF;
+    border-radius: 8px;
+    border: 1px solid #D7DCE3;
+
+    .header {
+        color: #296DC2;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 32px;
+        align-items: center;
+        border-bottom: 1px solid #D7DCE3;
+
+        .label {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .result {
+            font-weight: 700;
+            color: #395173;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "gruntfuggly.todo-tree",
+    "shardulm94.trailing-spaces",
+    "usernamehw.errorlens",
+    "kisstkondoros.vscode-codemetrics",
+    "yoavbls.pretty-ts-errors",
+    // linters
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "streetsidesoftware.code-spell-checker"
+  ]
+}
