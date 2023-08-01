@@ -27,7 +27,7 @@ namespace DatabaseProvider.Repositories.Implementations
 
         public Delivery GetById( int id )
         {
-            return Entities.Include( d => d.Client ).Include( d => d.Courier ).Where( d => d.DeliveryId == id ).FirstOrDefault();
+            return Entities.Include( d => d.Client ).Include( d => d.Courier ).FirstOrDefault( d => d.DeliveryId == id );
         }
     }
 }

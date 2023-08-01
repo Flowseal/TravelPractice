@@ -16,7 +16,7 @@ namespace DatabaseProvider.Repositories.Implementations
 
         public Courier GetById( int id )
         {
-            return Entities.Where( c => c.CourierId == id ).FirstOrDefault();
+            return Entities.FirstOrDefault( c => c.CourierId == id );
         }
     }
 }

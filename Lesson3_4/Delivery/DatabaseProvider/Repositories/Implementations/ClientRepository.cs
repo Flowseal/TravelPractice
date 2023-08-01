@@ -16,7 +16,7 @@ namespace DatabaseProvider.Repositories.Implementations
 
         public Client GetById( int id )
         {
-            return Entities.Where( c => c.ClientId == id ).FirstOrDefault();
+            return Entities.FirstOrDefault( c => c.ClientId == id );
         }
     }
 }
