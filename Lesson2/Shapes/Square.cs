@@ -3,6 +3,7 @@
 public class Square : IShape
 {
     private double _size;
+
     public double Size
     {
         get => _size;

@@ -3,6 +3,7 @@
 public class Triangle : IShape
 {
     private double _side1, _side2, _side3;
+
     public double Side1
     {
         get => _side1;
