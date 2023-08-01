@@ -48,6 +48,7 @@ namespace Delivery
                 Console.WriteLine( client );
             }
         }
+
         public static void GetClientById()
         {
             Console.Write( "ID: " );
@@ -62,6 +63,7 @@ namespace Delivery
                 Console.WriteLine( "Entered value not a number" );
             }
         }
+
         public static void NewClient()
         {
             string Name = string.Empty;
@@ -94,6 +96,7 @@ namespace Delivery
             _clientRepository.Add( client );
             _clientRepository.SaveChanges();
         }
+
         public static void DeleteClient()
         {
             Console.Write( "ID: " );

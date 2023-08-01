@@ -49,6 +49,7 @@ namespace Delivery
                 Console.WriteLine( courier );
             }
         }
+
         public static void GetCourierById()
         {
             Console.Write( "ID: " );
@@ -63,6 +64,7 @@ namespace Delivery
                 Console.WriteLine( "Entered value not a number" );
             }
         }
+
         public static void NewCourier()
         {
             string Name = string.Empty;
@@ -88,6 +90,7 @@ namespace Delivery
             _courierRepository.Add( courier );
             _courierRepository.SaveChanges();
         }
+
         public static void DeleteCourier()
         {
             Console.Write( "ID: " );

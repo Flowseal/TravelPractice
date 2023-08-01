@@ -10,6 +10,7 @@ namespace DatabaseProvider.Repositories.Implementations
             : base( context )
         {
         }
+
         public List<Delivery> GetAll()
         {
             return Entities.Include( d => d.Client ).Include( d => d.Courier ).ToList();

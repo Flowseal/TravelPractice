@@ -56,6 +56,7 @@ namespace Delivery
                 Console.WriteLine( delivery );
             }
         }
+
         public static void ListAllDeliveriesByCourierId()
         {
             Console.Write( "ID: " );
@@ -73,6 +74,7 @@ namespace Delivery
                 Console.WriteLine( "Entered value not a number" );
             }
         }
+
         public static void ListAllDeliveriesByClientId()
         {
             Console.Write( "ID: " );
@@ -90,6 +92,7 @@ namespace Delivery
                 Console.WriteLine( "Entered value not a number" );
             }
         }
+
         public static void GetDeliveryById()
         {
             Console.Write( "ID: " );
@@ -104,6 +107,7 @@ namespace Delivery
                 Console.WriteLine( "Entered value not a number" );
             }
         }
+
         public static void NewDelivery()
         {
             int ClientId = 0;
@@ -138,6 +142,7 @@ namespace Delivery
             _deliveryRepository.Add( delivery );
             _deliveryRepository.SaveChanges();
         }
+
         public static void DeleteDelivery()
         {
             Console.Write( "ID: " );

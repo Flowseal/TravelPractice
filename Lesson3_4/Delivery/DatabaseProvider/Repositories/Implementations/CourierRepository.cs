@@ -9,6 +9,7 @@ namespace DatabaseProvider.Repositories.Implementations
             : base( context )
         {
         }
+
         public List<Courier> GetAll()
         {
             return Entities.ToList();
